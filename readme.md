@@ -17,3 +17,61 @@ RabbitMQ is open source message broker software (sometimes called message-orient
 - **[BINDINGS](https://www.rabbitmq.com/tutorials/tutorial-three-javascript#bindings)**
 - **[PUTTING IT ALL TOGETHER](https://www.rabbitmq.com/tutorials/tutorial-three-javascript#putting-it-all-together)**
 - **[ROUTING & STUFF! READ ALL IMP!](https://www.rabbitmq.com/tutorials/tutorial-four-javascript)**
+
+# PROJECT SETUP INSTRUCTIONS
+
+# Installation
+1. Clone the repository
+```
+git clone https://github.com/amit-singh-mobcoder/microservice.git microservice
+```
+
+2. `cd microservice`
+then open terminal and run the following cmd
+```
+docker compose up -d
+```
+
+3. cd user-service
+```
+npm install
+```
+
+4. cd email-service
+```
+npm install
+```
+
+# Configuration
+Create ```.env``` file inside ```email-service``` directory
+```javascript
+PORT=3002
+MONGODB_URL='mongodb://localhost:27017'
+
+RABBITMQ_URL='amqp://localhost:5672'
+
+# Gmail
+EMAIL_USER='your-email-address'
+EMAIL_PASS='secret code'
+
+```
+Create ```.env``` file inside ```user-service``` directory
+```javascript
+PORT=3001
+MONGODB_URL='mongodb://localhost:27017'
+```
+
+# Run the App
+cd email-service
+```
+npm run dev
+```
+
+cd user-service
+```
+npm run dev
+```
+
+
+# Dependencies
+- Machine should have NodeJS and mongoDB compass
